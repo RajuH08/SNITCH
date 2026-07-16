@@ -111,8 +111,8 @@ function Register() {
               </div>
 
               <div className="mb-5 space-y-3 sm:mb-6">
-                <button
-                  type="button"
+                <a
+                  href="/api/auth/google"
                   aria-label="Continue with Google"
                   className="flex w-full items-center justify-center gap-3 rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-3.5 text-sm font-medium text-slate-100 transition hover:border-white/20 hover:bg-slate-950/80 focus:outline-none focus:ring-2 focus:ring-white/20"
                 >
@@ -120,7 +120,7 @@ function Register() {
                     <span className="h-3.5 w-3.5 rounded-full border-[3px] border-[#4285f4] border-r-[#ea4335] border-b-[#fbbc05] border-l-[#34a853]" />
                   </span>
                   Google
-                </button>
+                </a>
 
                 <button
                   type="button"
