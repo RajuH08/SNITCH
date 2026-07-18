@@ -9,6 +9,7 @@ import {
   googleCallback,
 } from "../controllers/auth.controller.js";
 import passport from "passport";
+import { CONFIG } from "../config/config.js";
 
 
 
@@ -29,8 +30,10 @@ router.get(
 
 router.get(
   "/google/callback",
-  passport.authenticate("google", { session: false }),
+  passport.authenticate("google", { session: false, failureRedirect: CONFIG.NODE_ENV === "development" ? "http://localhost:5173/login" : "/login" }),
   googleCallback,
 );
+
+
 
 export default router;
