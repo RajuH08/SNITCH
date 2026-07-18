@@ -4,6 +4,7 @@ import cookieParser from "cookie-parser";
 import authRouter from "./routes/auth.routes.js";
 import cors from "cors";
 import passport from "passport";
+import productsRouter from "./routes/products.routes.js";
 import { Strategy as GoogleStrategy } from "passport-google-oauth20";
 
 const app = express();
@@ -39,5 +40,6 @@ app.get("/", (req, res) => {
   res.status(200).json({ message: "Server is running" });
 });
 app.use("/api/auth", authRouter);
+app.use("/api/products", productsRouter);
 
 export default app;
