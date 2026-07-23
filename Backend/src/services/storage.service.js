@@ -1,5 +1,5 @@
 import { CONFIG } from "../config/config.js";
-import ImageKit from "@imagekit/nodejs";
+import ImageKit, { toFile } from "@imagekit/nodejs";
 
 const client = new ImageKit({
   privateKey: CONFIG.IMAGEKIT_API_PRIVATE_KEY,
@@ -8,7 +8,7 @@ const client = new ImageKit({
 
 export async function uploadFile({ buffer, fileName, folder = "snitch" }) {
   const result = await client.files.upload({
-    file: await ImageKit.toFile(buffer),
+    file: await toFile(buffer, fileName),
     fileName,
     folder,
   });
